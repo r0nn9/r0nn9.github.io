@@ -3,46 +3,47 @@
   <head>
     <meta charset="UTF-8">
     <title>Contact Me</title>
-    
+
     <link rel="icon" type="image/png" href="https://media.istockphoto.com/id/672343344/vector/flying-soccer-ball-with-flame.jpg?s=612x612&w=0&k=20&c=lblimd8Z7ZqrtvVmfIgyRSQ9xfgm3GdnGC-tPPagW7s=">
-  </head>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
-  <body>
 
     <style>
       body {
         font-family: 'Times New Roman', Times, serif;
       }
-      
+
       a {
-        color:black
+        color: black;
       }
     </style>
-  <h1>Contact Me</h1>
+  </head>
 
-  <form action="https://formsubmit.co/anajeramolina@hcc-nd.edu" method="POST">
-    <label for="name">Name:</label><br>
-    <input type="text" name="name" required><br>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
 
-    <label for="email">Email:</label><br>
-    <input type="email" name="email" required><br>
-    
-    <label for="message">Message:</label><br>
-    <textarea name="message" rows="5" required></textarea><br>
+    <h1>Contact Me</h1>
 
-    <!-- Advanced Feature #1 -->
-    <input type="hidden" name="_captcha" value="false">
+    <form action="https://formsubmit.co/anajeramolina@hcc-nd.edu" method="POST">
+      <label for="name">Name:</label><br>
+      <input type="text" name="name" required><br>
 
-    <!-- Advanced Feature #2 -->
-    <input type="hidden" name="_subject" value="New Website Contact Form Submission">
-    
-    <button type="submit">Send</button>
-  </form>
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" required><br>
 
+      <label for="message">Message:</label><br>
+      <textarea name="message" rows="5" required></textarea><br>
+
+      <!-- Advanced Feature #1 -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Advanced Feature #2 -->
+      <input type="hidden" name="_subject" value="New Website Contact Form Submission">
+
+      <button type="submit">Send</button>
+    </form>
   </body>
 </html>
