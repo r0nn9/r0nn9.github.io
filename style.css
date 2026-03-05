@@ -41,7 +41,7 @@ main {
   padding: 25px;
   background-color: black;
   border-radius: 10px;
-  border: 1px solid navy;
+  border: 1px solid blue;
 }
 
 
@@ -67,7 +67,7 @@ a:hover {
 img {
   max-width: 100%;
   border-radius: 8px;
-  border: 2px solid navy;
+  border: 2px solid blue;
 }
 
 
@@ -100,7 +100,7 @@ form {
 input, textarea {
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid navy;
+  border: 1px solid blue;
   border-radius: 5px;
   background-color: #111;
   color: white;
@@ -126,12 +126,12 @@ table {
 }
 
 th, td {
-  border: 1px solid navy;
+  border: 1px solid blue;
   padding: 10px;
 }
 
 th {
-  background-color: navy;
+  background-color: blue;
   color: white;
 }
 
