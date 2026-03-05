@@ -1,16 +1,144 @@
 body {
-  background-color: #949ca6;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-em {
-  color: #601c2e;
-  font-style: normal;
+
+nav {
+  background-color: navy;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
 }
 
-input {
-  background-color: gray;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
 }
 
-textarea {
-  background-color: gray;
+
+nav a:hover {
+  color: maroon;
+  text-decoration: underline;
+}
+
+
+main {
+  flex: 1;
+}
+
+
+.container {
+  width: 80%;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid navy;
+}
+
+
+h1 {
+  color: maroon;
+  text-align: center;
+}
+
+h2 {
+  color: navy;
+}
+
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: maroon;
+}
+
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid navy;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img,
+.gallery video,
+.gallery iframe {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery img:hover {
+  border-color: maroon;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid navy;
+  border-radius: 5px;
+  background-color: #111;
+  color: white;
+}
+
+button {
+  background-color: maroon;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: red;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid navy;
+  padding: 10px;
+}
+
+th {
+  background-color: navy;
+  color: white;
+}
+
+
+footer {
+  background-color: navy;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
