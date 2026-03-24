@@ -13,7 +13,7 @@ function startgame(user)   {
             careerPath(user);
             return;
         case "2":
-            console.log("You choose not to play so bye.")
+            console.log("You choose not to play, so bye.")
             endgame();
             return;
         default:
