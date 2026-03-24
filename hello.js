@@ -20,5 +20,11 @@ function startgame(user)   {
             console.log(choice+" is not valid. Please enter a number corresponding to your choice.");
             startgame(user);
     }
+}
 
+function endgame()  {
+    console.log("")
+    console.log("Game Over! Refresh to play again.")
+    console.log("")
+    console.log("Thanks for playing! This was one of five endings.")
 }
