@@ -54,9 +54,10 @@ function trainingStage() {
 /*
  * Displays the ending message to the player.
  */
-function endgame()  {
+function endgame(result)  {
     console.log("")
     console.log("Game Over! Refresh to play again.")
+    console.log(result);
     console.log("")
     console.log("Thanks for playing! This was one of four endings.")
 }
