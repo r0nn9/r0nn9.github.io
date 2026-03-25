@@ -1,16 +1,15 @@
 body {
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-
 nav {
-  background-color: navy;
+  background-color: darkred;
   padding: 15px;
   text-align: center;
   font-size: 22px;
@@ -23,27 +22,23 @@ nav a {
   font-weight: bold;
 }
 
-
 nav a:hover {
-  color: maroon;
+  color: red;
   text-decoration: underline;
 }
-
 
 main {
   flex: 1;
 }
 
-
 .container {
   width: 80%;
   margin: 30px auto;
   padding: 25px;
-  background-color: white;
+  background-color: black;
   border-radius: 10px;
-  border: 1px solid blue;
+  border: 1px solid red;
 }
-
 
 h1 {
   color: red;
@@ -51,25 +46,22 @@ h1 {
 }
 
 h2 {
-  color: blue;
+  color: red;
 }
 
-
 a {
-  color: black;
+  color: white;
 }
 
 a:hover {
-  color: maroon;
+  color: red;
 }
-
 
 img {
   max-width: 100%;
   border-radius: 8px;
-  border: 2px solid blue;
+  border: 2px solid red;
 }
-
 
 .gallery {
   display: grid;
@@ -86,11 +78,10 @@ img {
 }
 
 .gallery img:hover {
-  border-color: maroon;
+  border-color: red;
   transform: scale(1.05);
   transition: 0.3s;
 }
-
 
 form {
   display: flex;
@@ -100,14 +91,14 @@ form {
 input, textarea {
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid blue;
+  border: 1px solid red;
   border-radius: 5px;
   background-color: #111;
   color: white;
 }
 
 button {
-  background-color: maroon;
+  background-color: darkred;
   color: white;
   border: none;
   padding: 10px;
@@ -118,7 +109,6 @@ button:hover {
   background-color: red;
 }
 
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -126,18 +116,17 @@ table {
 }
 
 th, td {
-  border: 1px solid blue;
+  border: 1px solid red;
   padding: 10px;
 }
 
 th {
-  background-color: blue;
+  background-color: darkred;
   color: white;
 }
 
-
 footer {
-  background-color: navy;
+  background-color: darkred;
   color: white;
   text-align: center;
   padding: 10px;
