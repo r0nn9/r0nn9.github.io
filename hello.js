@@ -1,24 +1,27 @@
-let user = prompt("What is your name?");
-startgame(user);
+// Soccer Career Text Adventure Game
+// Your goal is to reach one of four different endings.
 
-function startgame(user)   {
-    console.log("Hi, "+user+". Do you want to play?");
+/*
+ * Starts the game and asks the player if they want to begin.
+ */
+function startGame(playerName) {
+    console.log("Welcome " + playerName + "! Ready to start your soccer career?");
     console.log("1. Yes");
     console.log("2. No");
-    console.log("");
 
-    let choice = prompt("Please Choose:");
+    let choice = prompt("Choose an option:");
+
     switch (choice) {
         case "1":
-            careerPath(user);
-            return;
+            trainingStage();
+            break;
         case "2":
-            console.log("You choose not to play, so bye.")
-            endgame();
-            return;
+            console.log("You decided not to pursue soccer.");
+            endGame("You never started your career.");
+            break;
         default:
-            console.log(choice+" is not valid. Please enter a number corresponding to your choice.");
-            startgame(user);
+            console.log("Invalid choice.");
+            startGame(playerName); // retry
     }
 }
 
@@ -28,3 +31,8 @@ function endgame()  {
     console.log("")
     console.log("Thanks for playing! This was one of five endings.")
 }
+
+
+// Start the program
+let user = prompt("Enter your name:");
+startGame(user);
