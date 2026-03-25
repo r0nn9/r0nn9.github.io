@@ -1,4 +1,4 @@
-// Soccer Career Text Adventure Game
+// Soccer Career Adventure Game
 // Your goal is to reach one of four different endings.
 
 /*
@@ -25,11 +25,40 @@ function startGame(playerName) {
     }
 }
 
+/*
+ * First decision: how serious the player is about training.
+ */
+function trainingStage() {
+    console.log("You are a young player trying to improve.");
+    console.log("1. Train seriously");
+    console.log("2. Skip training");
+
+    let choice = prompt("Choose an option:");
+
+    switch (choice) {
+        case "1":
+            academyStage();
+            break;
+        case "2":
+            endGame("Not good enough to reach the World Cup ❌");
+            break;
+        default:
+            trainingStage();
+    }
+}
+
+
+
+
+
+/*
+ * Displays the ending message to the player.
+ */
 function endgame()  {
     console.log("")
     console.log("Game Over! Refresh to play again.")
     console.log("")
-    console.log("Thanks for playing! This was one of five endings.")
+    console.log("Thanks for playing! This was one of four endings.")
 }
 
 
