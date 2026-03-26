@@ -116,7 +116,7 @@ function worldCupStage() {
 /*
  * Displays the ending message to the player.
  */
-function endgame(result)  {
+function endGame(result)  {
     console.log("")
     console.log("Game Over! Refresh to play again.")
     console.log(result);
