@@ -40,7 +40,7 @@ function trainingStage() {
             academyStage();
             break;
         case "2":
-            endGame("Not good enough to reach the World Cup ❌");
+            endGame("Not good enough to reach the World Cup");
             break;
         default:
             trainingStage();
@@ -62,7 +62,7 @@ function academyStage() {
             proStage();
             break;
         case "2":
-            endGame("Not good enough to reach the World Cup ❌");
+            endGame("Not good enough to reach the World Cup");
             break;
         default:
             academyStage();
@@ -84,13 +84,12 @@ function proStage() {
             worldCupStage();
             break;
         case "2":
-            endGame("Career ended due to injury 🤕");
+            endGame("Career ended due to injury");
             break;
         default:
             proStage();
     }
 }
-
 
 /*
  * Displays the ending message to the player.
