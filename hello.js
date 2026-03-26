@@ -92,6 +92,28 @@ function proStage() {
 }
 
 /*
+ * Final decision: outcome in the World Cup final.
+ */
+function worldCupStage() {
+    console.log("You reach the World Cup Final!");
+    console.log("1. Take the shot");
+    console.log("2. Pass the ball");
+
+    let choice = prompt("Choose an option:");
+
+    switch (choice) {
+        case "1":
+            endGame("You won the World Cup");
+            break;
+        case "2":
+            endGame("You lost the World Cup");
+            break;
+        default:
+            worldCupStage();
+    }
+}
+
+/*
  * Displays the ending message to the player.
  */
 function endgame(result)  {
