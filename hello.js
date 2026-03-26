@@ -47,8 +47,49 @@ function trainingStage() {
     }
 }
 
+/*
+ * Second decision: behavior at the academy level.
+ */
+function academyStage() {
+    console.log("You join a top academy.");
+    console.log("1. Stay focused");
+    console.log("2. Get distracted");
 
+    let choice = prompt("Choose an option:");
 
+    switch (choice) {
+        case "1":
+            proStage();
+            break;
+        case "2":
+            endGame("Not good enough to reach the World Cup ❌");
+            break;
+        default:
+            academyStage();
+    }
+}
+
+/*
+ * Third decision: risk level during professional career.
+ */
+function proStage() {
+    console.log("You're now a professional player.");
+    console.log("1. Play carefully");
+    console.log("2. Take big risks");
+
+    let choice = prompt("Choose an option:");
+
+    switch (choice) {
+        case "1":
+            worldCupStage();
+            break;
+        case "2":
+            endGame("Career ended due to injury 🤕");
+            break;
+        default:
+            proStage();
+    }
+}
 
 
 /*
