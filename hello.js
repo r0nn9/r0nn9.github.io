@@ -1,8 +1,15 @@
 // Soccer Career Adventure Game
-// Your goal is to reach one of four different endings.
+// Multiple paths, stats, and endings
+
+let skill = 0;
+let discipline = 0;
+let fitness = 0;
+
+let season = 1;
+let maxSeasons = 3;
 
 /*
- * Starts the game and asks the player if they want to begin.
+ * Start Game
  */
 function startGame(playerName) {
     console.log("Welcome " + playerName + "! Ready to start your soccer career?");
@@ -13,118 +20,154 @@ function startGame(playerName) {
 
     switch (choice) {
         case "1":
-            trainingStage();
+            playSeasons(); // LOOP ENTRY
             break;
         case "2":
-            console.log("You decided not to pursue soccer.");
             endGame("You never started your career.");
             break;
         default:
-            console.log("Invalid choice.");
-            startGame(playerName); // retry
+            startGame(playerName);
     }
 }
 
 /*
- * First decision: how serious the player is about training.
+ * MAIN LOOP
+ */
+function playSeasons() {
+    while (season <= maxSeasons) {
+        console.log("----- Season " + season + " -----");
+
+        trainingStage();
+        academyStage();
+        proStage();
+
+        season++;
+    }
+
+    worldCupStage(); // after loop ends
+}
+
+/*
+ * Training Stage
  */
 function trainingStage() {
-    console.log("You are a young player trying to improve.");
-    console.log("1. Train seriously");
-    console.log("2. Skip training");
+    console.log("You are training this season.");
+    console.log("1. Train intensely");
+    console.log("2. Train normally");
+    console.log("3. Skip training");
 
     let choice = prompt("Choose an option:");
 
     switch (choice) {
         case "1":
-            academyStage();
+            skill += 2;
+            fitness -= 1;
             break;
         case "2":
-            endGame("Not good enough to reach the World Cup");
+            skill += 1;
+            fitness += 1;
+            break;
+        case "3":
+            discipline -= 2;
             break;
         default:
             trainingStage();
+            return;
     }
 }
 
 /*
- * Second decision: behavior at the academy level.
+ * Academy Stage
  */
 function academyStage() {
-    console.log("You join a top academy.");
+    console.log("Academy decisions this season.");
     console.log("1. Stay focused");
-    console.log("2. Get distracted");
+    console.log("2. Build teamwork");
+    console.log("3. Get distracted");
 
     let choice = prompt("Choose an option:");
 
     switch (choice) {
         case "1":
-            proStage();
+            skill += 2;
+            discipline += 1;
             break;
         case "2":
-            endGame("Not good enough to reach the World Cup");
+            discipline += 2;
+            break;
+        case "3":
+            discipline -= 2;
+            fitness -= 1;
             break;
         default:
             academyStage();
+            return;
     }
 }
 
 /*
- * Third decision: risk level during professional career.
+ * Pro Stage
  */
 function proStage() {
-    console.log("You're now a professional player.");
-    console.log("1. Play carefully");
-    console.log("2. Take big risks");
+    console.log("Professional matches this season.");
+    console.log("1. Play safe");
+    console.log("2. Play aggressively");
+    console.log("3. Train extra");
 
     let choice = prompt("Choose an option:");
 
     switch (choice) {
         case "1":
-            worldCupStage();
+            discipline += 1;
             break;
         case "2":
-            endGame("Career ended due to injury");
+            skill += 2;
+            fitness -= 2;
+            break;
+        case "3":
+            fitness += 2;
             break;
         default:
             proStage();
+            return;
     }
 }
 
 /*
- * Final decision: outcome in the World Cup final.
+ * Final Outcome
  */
 function worldCupStage() {
-    console.log("You reach the World Cup Final!");
-    console.log("1. Take the shot");
-    console.log("2. Pass the ball");
+    console.log("You reach the World Cup after " + maxSeasons + " seasons!");
 
-    let choice = prompt("Choose an option:");
+    let total = skill + discipline + fitness;
 
-    switch (choice) {
-        case "1":
-            endGame("You won the World Cup");
-            break;
-        case "2":
-            endGame("You lost the World Cup");
-            break;
-        default:
-            worldCupStage();
+    console.log("Final Stats:");
+    console.log("Skill:", skill);
+    console.log("Discipline:", discipline);
+    console.log("Fitness:", fitness);
+
+    if (total >= 15) {
+        endGame("You became a LEGEND and won the World Cup!");
+    } else if (total >= 10) {
+        endGame("You made it far but lost in the finals.");
+    } else if (total >= 5) {
+        endGame("You had an average career.");
+    } else {
+        endGame("Your career never reached the top level.");
     }
 }
 
 /*
- * Displays the ending message to the player.
+ * End Game
  */
-function endGame(result)  {
-    console.log("")
-    console.log("Game Over! Refresh to play again.")
+function endGame(result) {
+    console.log("");
+    console.log("Game Over!");
     console.log(result);
-    console.log("")
-    console.log("Thanks for playing! This was one of four endings.")
+    console.log("Try again and make different choices!");
 }
 
 
-// Start the program
+// Start
 let user = prompt("Enter your name:");
 startGame(user);
