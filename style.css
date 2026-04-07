@@ -99,12 +99,6 @@ img {
   border: 2px solid red;
 }
 
-.gallery img:hover {
-  border-color: red;
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
 .gallery-description {
   text-align: center;
   margin-bottom: 20px;
