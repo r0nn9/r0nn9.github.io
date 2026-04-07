@@ -108,6 +108,35 @@ img {
   color: lightgray;
 }
 
+.content {
+  display: none;
+}
+
+.collapsible.active .content {
+  display: block;
+}
+
+.toggle {
+  width: 100%;
+  text-align: left;
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.toggle:hover {
+  background-color: red;
+}
+
+.collapsible {
+  margin-bottom: 20px;
+}
+
 form {
   display: flex;
   flex-direction: column;
