@@ -5,10 +5,11 @@
   <title>Sandbox</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="Media/favicon.png">
-  <script src="hello.js"></script>
+  <script src="hello.js" defer></script>
 </head>
 
 <body>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="resume.html">Resume</a>
@@ -17,8 +18,36 @@
   <a href="sandbox.html">Sandbox</a>
 </nav>
 
+<section class="content">
+  <h1>Sandbox</h1>
+  <p>Interactive soccer career simulation game.</p>
+
+  <div class="game-container">
+
+    <div id="game">
+
+      <h2>Soccer Career Mode</h2>
+
+      <p id="story">Click start to begin your soccer career.</p>
+
+      <div id="choices">
+        <button onclick="startGameUI()">Start Game</button>
+      </div>
+
+      <div id="stats">
+        <p>Skill: <span id="skill">0</span></p>
+        <p>Discipline: <span id="discipline">0</span></p>
+        <p>Fitness: <span id="fitness">0</span></p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <footer>
   <p>© 2026 Aaron Najera-Molina</p>
 </footer>
+
 </body>
 </html>

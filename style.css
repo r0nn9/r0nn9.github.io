@@ -205,3 +205,55 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.content {
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+.game-container {
+  width: 70%;
+  max-width: 800px;
+  height: 500px;
+
+  margin: 0 auto;
+
+  background-color: black;
+  border: 2px solid darkred;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#story {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+#choices button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#choices button:hover {
+  background-color: red;
+}
+
+#stats {
+  margin-top: 20px;
+  color: lightgray;
+}
