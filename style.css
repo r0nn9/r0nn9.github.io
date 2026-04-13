@@ -8,6 +8,7 @@ body {
   min-height: 100vh;
 }
 
+/* NAVIGATION */
 nav {
   background-color: darkred;
   padding: 15px;
@@ -27,6 +28,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* PAGE LAYOUT */
 main {
   flex: 1;
 }
@@ -40,6 +42,7 @@ main {
   border: 1px solid red;
 }
 
+/* HEADINGS */
 h1 {
   color: red;
   text-align: center;
@@ -49,6 +52,7 @@ h2 {
   color: red;
 }
 
+/* LINKS */
 a {
   color: white;
 }
@@ -57,28 +61,22 @@ a:hover {
   color: red;
 }
 
+/* IMAGES */
 img {
   max-width: 100%;
   border-radius: 8px;
   border: 2px solid red;
 }
 
+/* GALLERY GRID */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
-.content img {
-  width: 90%;
-  max-width: 900px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  border: 2px solid red;
-}
-
+/* MEDIA STYLING INSIDE CONTENT BLOCKS */
+.content img,
 .content video {
   width: 90%;
   max-width: 900px;
@@ -99,19 +97,14 @@ img {
   border: 2px solid red;
 }
 
+/* GALLERY TEXT */
 .gallery-description {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.gallery-youtube {
-  text-align: center;
-}
-
-.gallery-clip {
-  text-align: center;
-}
-
+.gallery-youtube,
+.gallery-clip,
 .gallery-picture {
   text-align: center;
 }
@@ -122,14 +115,17 @@ img {
   color: lightgray;
 }
 
-.content {
+/* hidden by default */
+.collapsible .content {
   display: none;
 }
 
+/* visible when active */
 .collapsible.active .content {
   display: block;
 }
 
+/* toggle button */
 .toggle {
   width: 100%;
   text-align: left;
@@ -151,6 +147,7 @@ img {
   margin-bottom: 20px;
 }
 
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
@@ -177,12 +174,14 @@ button:hover {
   background-color: red;
 }
 
+/* BIO */
 .bio {
   font-style: italic;
   color: white;
   margin-bottom: 20px;
 }
 
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -199,6 +198,7 @@ th {
   color: white;
 }
 
+/* FOOTER */
 footer {
   background-color: darkred;
   color: white;
@@ -206,11 +206,9 @@ footer {
   padding: 10px;
 }
 
-.content {
-  padding: 40px;
-  text-align: center;
-  color: white;
-}
+/* ========================= */
+/* GAME SYSTEM (SAFE ZONE)   */
+/* ========================= */
 
 .game-container {
   width: 70%;
