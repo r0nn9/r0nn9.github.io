@@ -226,6 +226,10 @@ footer {
   align-items: center;
 }
 
+.game-description {
+  text-align: center;
+}
+
 #game {
   width: 100%;
   padding: 20px;
