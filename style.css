@@ -226,8 +226,11 @@ footer {
   align-items: center;
 }
 
-.game-description {
+.sandbox-page .container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #game {
