@@ -15,38 +15,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
         results.innerHTML = "<p>Loading...</p>";
 
-        fetch("https://v2.sg.media-imdb.com/suggestion/" + title.charAt(0).toLowerCase() + "/" + encodeURIComponent(title) + ".json")
+        fetch("https://imdb.iamidiotareyoutoo.com/search?q=" + encodeURIComponent(title))
             .then(function(response) {
                 return response.json();
             })
             .then(function(data) {
 
+                console.log(data);
+
                 results.innerHTML = "";
 
-                if (!data.d || data.d.length === 0) {
+                if (!data.description || data.description.length === 0) {
                     results.innerHTML = "<p>No movies or shows found.</p>";
                     return;
                 }
 
-                let movies = data.d.slice(0, 5);
+                let movies = data.description.slice(0, 5);
 
                 for (let i = 0; i < movies.length; i++) {
                     let movie = movies[i];
 
                     let div = document.createElement("div");
 
-                    let movieTitle = movie.l || "Unknown Title";
-                    let year = movie.y || "Unknown Year";
-                    let actors = movie.s || "Unknown Cast";
-                    let poster = movie.i ? movie.i.imageUrl : "";
+                    let movieTitle = movie["#TITLE"] || "Unknown Title";
+                    let year = movie["#YEAR"] || "Unknown Year";
+                    let actors = movie["#ACTORS"] || "Unknown Actors";
+                    let imdbID = movie["#IMDB_ID"] || "";
+                    let poster = movie["#IMG_POSTER"] || "";
 
                     div.innerHTML =
                         "<h2>" + movieTitle + "</h2>" +
                         "<p><strong>Year:</strong> " + year + "</p>" +
-                        "<p><strong>Cast:</strong> " + actors + "</p>";
+                        "<p><strong>Actors:</strong> " + actors + "</p>";
+
+                    if (imdbID !== "") {
+                        div.innerHTML +=
+                            "<p><strong>IMDb ID:</strong> " + imdbID + "</p>";
+                    }
 
                     if (poster !== "") {
-                        div.innerHTML += "<img src='" + poster + "' alt='Movie poster'>";
+                        div.innerHTML +=
+                            "<img src='" + poster + "' alt='" + movieTitle + " poster'>";
                     }
 
                     results.appendChild(div);
@@ -55,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(function(error) {
                 console.log(error);
-                results.innerHTML = "<p>Something went wrong with the API request.</p>";
+                results.innerHTML = "<p>Something went wrong with the movie API request.</p>";
             });
 
     });
