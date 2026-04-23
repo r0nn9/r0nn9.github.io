@@ -15,37 +15,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
         results.innerHTML = "<p>Loading...</p>";
 
-        fetch("https://search.imdbot.workers.dev/?q=" + encodeURIComponent(title))
+        fetch("https://v2.sg.media-imdb.com/suggestion/" + title.charAt(0).toLowerCase() + "/" + encodeURIComponent(title) + ".json")
             .then(function(response) {
                 return response.json();
             })
             .then(function(data) {
 
-                console.log(data);
-
                 results.innerHTML = "";
 
-                if (!data.description || data.description.length === 0) {
+                if (!data.d || data.d.length === 0) {
                     results.innerHTML = "<p>No movies or shows found.</p>";
                     return;
                 }
 
-                let movies = data.description.slice(0, 5);
+                let movies = data.d.slice(0, 5);
 
                 for (let i = 0; i < movies.length; i++) {
                     let movie = movies[i];
 
                     let div = document.createElement("div");
 
-                    let movieTitle = movie["#TITLE"] || "Unknown Title";
-                    let year = movie["#YEAR"] || "Unknown Year";
-                    let actors = movie["#ACTORS"] || "Unknown Actors";
-                    let poster = movie["#IMG_POSTER"] || "";
+                    let movieTitle = movie.l || "Unknown Title";
+                    let year = movie.y || "Unknown Year";
+                    let actors = movie.s || "Unknown Cast";
+                    let poster = movie.i ? movie.i.imageUrl : "";
 
                     div.innerHTML =
                         "<h2>" + movieTitle + "</h2>" +
                         "<p><strong>Year:</strong> " + year + "</p>" +
-                        "<p><strong>Actors:</strong> " + actors + "</p>";
+                        "<p><strong>Cast:</strong> " + actors + "</p>";
 
                     if (poster !== "") {
                         div.innerHTML += "<img src='" + poster + "' alt='Movie poster'>";
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(function(error) {
                 console.log(error);
-                results.innerHTML = "<p>Something went wrong. The API may be blocked or unavailable.</p>";
+                results.innerHTML = "<p>Something went wrong with the API request.</p>";
             });
 
     });
