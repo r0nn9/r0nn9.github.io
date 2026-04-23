@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let title = movieInput.value;
 
+        if (title === "") {
+            results.innerHTML = "<p>Please enter a movie or show title.</p>";
+            return;
+        }
+
         results.innerHTML = "<p>Loading...</p>";
 
         fetch("https://search.imdbot.workers.dev/?q=" + encodeURIComponent(title))
@@ -15,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 return response.json();
             })
             .then(function(data) {
+
+                console.log(data);
 
                 results.innerHTML = "";
 
@@ -30,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     let div = document.createElement("div");
 
-                    let movieTitle = movie["#TITLE"] ? movie["#TITLE"] : "Unknown Title";
-                    let year = movie["#YEAR"] ? movie["#YEAR"] : "Unknown Year";
-                    let actors = movie["#ACTORS"] ? movie["#ACTORS"] : "Unknown Actors";
-                    let poster = movie["#IMG_POSTER"] ? movie["#IMG_POSTER"] : "";
+                    let movieTitle = movie["#TITLE"] || "Unknown Title";
+                    let year = movie["#YEAR"] || "Unknown Year";
+                    let actors = movie["#ACTORS"] || "Unknown Actors";
+                    let poster = movie["#IMG_POSTER"] || "";
 
                     div.innerHTML =
                         "<h2>" + movieTitle + "</h2>" +
@@ -41,12 +48,16 @@ document.addEventListener("DOMContentLoaded", function() {
                         "<p><strong>Actors:</strong> " + actors + "</p>";
 
                     if (poster !== "") {
-                        div.innerHTML += "<img src='" + poster + "' alt='" + movieTitle + " poster'>";
+                        div.innerHTML += "<img src='" + poster + "' alt='Movie poster'>";
                     }
 
                     results.appendChild(div);
                 }
 
+            })
+            .catch(function(error) {
+                console.log(error);
+                results.innerHTML = "<p>Something went wrong. The API may be blocked or unavailable.</p>";
             });
 
     });
