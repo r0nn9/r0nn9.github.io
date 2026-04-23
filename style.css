@@ -115,14 +115,14 @@ img {
   color: lightgray;
 }
 
-/* hidden by default */
 .collapsible .content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
-/* visible when active */
 .collapsible.active .content {
-  display: block;
+  max-height: 1000px;
 }
 
 /* toggle button */
