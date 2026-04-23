@@ -125,6 +125,17 @@ img {
   max-height: 1000px;
 }
 
+/* SANDBOX COLLAPSIBLE */
+.sandbox-collapse .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease; /* slower animation */
+}
+
+.sandbox-collapse.active .content {
+  max-height: 300px; /* smaller box */
+}
+
 /* toggle button */
 .toggle {
   width: 100%;
