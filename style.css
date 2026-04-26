@@ -11,21 +11,25 @@ body {
 /* NAVIGATION */
 nav {
   background-color: darkred;
-  padding: 15px;
+  padding: 15px 0;
   text-align: center;
-  font-size: 22px;
+  font-size: 25px;
+  border-bottom: 2px solid red;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 10px;
+  margin: 0 18px;
   font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: red;
-  text-decoration: underline;
+  background-color: red;
+  color: white;
 }
 
 /* PAGE LAYOUT */
