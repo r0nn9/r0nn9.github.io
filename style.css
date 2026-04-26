@@ -190,6 +190,37 @@ button:hover {
   background-color: red;
 }
 
+/* CONTACT PAGE */
+.contact-intro {
+  text-align: center;
+  color: lightgray;
+  font-size: 18px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #111;
+  padding: 25px;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+}
 /* BIO */
 .bio {
   font-style: italic;
