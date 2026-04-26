@@ -72,6 +72,20 @@ img {
   border: 2px solid red;
 }
 
+/* HOMEPAGE TEXT */
+.container p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.container h1 {
+  font-size: 42px;
+}
+
+.container h2 {
+  font-size: 26px;
+}
+
 /* GALLERY GRID */
 .gallery {
   display: grid;
