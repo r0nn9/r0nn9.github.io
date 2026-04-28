@@ -86,6 +86,16 @@ img {
   font-size: 26px;
 }
 
+.container li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.container ul {
+  padding-left: 25px;
+}
+
 /* GALLERY GRID */
 .gallery {
   display: grid;
