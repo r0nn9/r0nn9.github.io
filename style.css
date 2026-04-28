@@ -74,20 +74,20 @@ img {
 
 /* HOMEPAGE TEXT */
 .container p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
 .container h1 {
-  font-size: 42px;
+  font-size: 35px;
 }
 
 .container h2 {
-  font-size: 26px;
+  font-size: 25px;
 }
 
 .container li {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
