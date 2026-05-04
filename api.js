@@ -68,5 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
     });
+    movieInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+        event.preventDefault();   // prevents page refresh if inside form
+        searchButton.click();
+        }
+    });
 
 });
