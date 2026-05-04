@@ -168,7 +168,7 @@ img {
 /* toggle button */
 .toggle {
   width: 100%;
-  text-align: left;
+  text-align: center;
   background-color: darkred;
   color: white;
   border: none;
